@@ -83,6 +83,10 @@ namespace MainProgram
 				{
 					Console.WriteLine("\nPlease try again. Your response should only contain an integer value.");
 				}
+				catch (OverflowException)
+				{
+					Console.WriteLine("\nYour number is too large. Please enter a reasonable number of fields (e.g. 5, 20, 100).");
+				}
 			}
 			
 		// ############################################################################################
