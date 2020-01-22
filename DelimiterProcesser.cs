@@ -59,7 +59,7 @@ namespace MainProgram
 			
 			if (row.Length != numOfFields)
 			{
-				Console.WriteLine("\nERROR: The provided input file does not contain the expected formatting.");
+				Console.WriteLine("\nERROR: The provided input file does not contain the expected formatting. Exiting program.");
 				Console.ReadLine();
 				return;
 			}
@@ -91,6 +91,7 @@ namespace MainProgram
 			Console.WriteLine("\nFile processing was successful. Output file(s) were generated if there was at least one applicable (in)valid record.");
 			Console.WriteLine("Number of valid records: " + validRecords.Count);
 			Console.WriteLine("Number of invalid records: " + invalidRecords.Count);
+			Console.WriteLine("Press Enter to exit the program.");
 			Console.ReadLine();
 		}
 
