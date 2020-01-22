@@ -53,12 +53,14 @@ namespace MainProgram
 			catch (EndOfStreamException)
 			{
 				Console.WriteLine("\nERROR: Input file is empty. Exiting program.");
+				Console.ReadLine();
 				return;
 			}
 			
 			if (row.Length != numOfFields)
 			{
 				Console.WriteLine("\nERROR: The provided input file does not contain the expected formatting.");
+				Console.ReadLine();
 				return;
 			}
 			// If the header is valid, begin processing the records by comparing the parsed CSV values with the expected number of fields. 
@@ -89,7 +91,7 @@ namespace MainProgram
 			Console.WriteLine("\nFile processing was successful. Output file(s) were generated if there was at least one applicable (in)valid record.");
 			Console.WriteLine("Number of valid records: " + validRecords.Count);
 			Console.WriteLine("Number of invalid records: " + invalidRecords.Count);
-
+			Console.ReadLine();
 		}
 
 		/// <summary>
