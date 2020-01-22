@@ -71,10 +71,10 @@ namespace MainProgram
 		// ############################################################################################
 		// # QUESTION THREE																			  #
 		// ############################################################################################
-			// The system will only allow a user to input an integer value. 
-			Console.WriteLine("\n3. How many fields should each record contain (as an integer value)?");
-			while (fieldCount == -1)
+			// The system will only allow a user to input an integer value. 	
+			while (fieldCount < 1)
 			{
+				Console.WriteLine("\n3. How many fields should each record contain (as a value >= 1)?");
 				try
 				{
 					fieldCount = int.Parse(Console.ReadLine());
