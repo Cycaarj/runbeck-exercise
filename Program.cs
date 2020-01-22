@@ -20,7 +20,7 @@ namespace MainProgram
 			string filePath, fileType;
 			int fieldCount = -1;
 			StreamReader stream = null;
-			DelimiterProcesser processor;
+			DelimiterProcessor processor;
 
 			// Display the welcome message and questions. 
 			// Store the responses given to the questions into the aforementioned string variables.
@@ -32,7 +32,7 @@ namespace MainProgram
 		// # QUESTION ONE																			  #
 		// ############################################################################################
 			// Open the file for reading. Ensure that the file path is correct. 
-			Console.WriteLine("1. What is the file path of the file that needs to be processed?");
+			Console.WriteLine("1. What is the file path of the file that needs to be processed? If applicable, please include the file extension.");
 			do
 			{
 				filePath = Console.ReadLine();
@@ -95,12 +95,12 @@ namespace MainProgram
 			// Begin processing on the input file. 
 			if (fileType.Equals("csv"))
 			{
-				processor = new DelimiterProcesser(stream, ',', "csv", fieldCount);
+				processor = new DelimiterProcessor(stream, ',', "csv", fieldCount);
 				processor.Process_Input_File();
 			}
 			else
 			{
-				processor = new DelimiterProcesser(stream, '\t', "tsv", fieldCount);
+				processor = new DelimiterProcessor(stream, '\t', "tsv", fieldCount);
 				processor.Process_Input_File();
 			}
 
