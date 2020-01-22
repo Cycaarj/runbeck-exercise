@@ -40,12 +40,22 @@ namespace MainProgram
 		/// <returns> An integer representing a status code </returns>
 		public void Process_Input_File()
 		{
-			// Instantiate the lists that will maintain the identified valid and invalid records. 
+			// Instantiate objects that will maintain the identified valid and invalid records. 
 			List<string[]> validRecords = new List<string[]> { };
 			List<string[]> invalidRecords = new List<string[]> { };
+			string[] row;
 
 			// Read the header row. If the header row does not contain the same number of columns as the expected number of fields, exit the method.
-			string[] row = reader.ReadRow();
+			try
+			{
+				row = reader.ReadRow();
+			}
+			catch (EndOfStreamException)
+			{
+				Console.WriteLine("\nERROR: Input file is empty. Exiting program.");
+				return;
+			}
+			
 			if (row.Length != numOfFields)
 			{
 				Console.WriteLine("\nERROR: The provided input file does not contain the expected formatting.");
