@@ -35,7 +35,7 @@ namespace MainProgram
 		}
 
 		/// <summary>
-		/// The driving method for the DelimiterProcessor class. 
+		/// The driving method for the DelimiterProcessor class. Reads an input file and determines all (in)valid records to split into separate output files.
 		/// </summary>
 		public void Process_Input_File()
 		{
