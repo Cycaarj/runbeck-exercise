@@ -37,7 +37,6 @@ namespace MainProgram
 		/// <summary>
 		/// The driving method for the DelimiterProcessor class. 
 		/// </summary>
-		/// <returns> An integer representing a status code </returns>
 		public void Process_Input_File()
 		{
 			// Instantiate objects that will maintain the identified valid and invalid records. 
