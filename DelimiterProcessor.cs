@@ -100,7 +100,7 @@ namespace MainProgram
 		/// </summary>
 		/// <param name="validRecs"> The list containing valid records </param>
 		/// <param name="invalidRecs"> The list containing invalid records </param>
-		public void Generate_Output_Files(List<string[]> validRecs, List<string[]> invalidRecs)
+		private void Generate_Output_Files(List<string[]> validRecs, List<string[]> invalidRecs)
 		{
 			// Create a directory in which to generate the output files. 
 			// If the output files already exist (i.e. as a result of multiple runs), they will be overwritten. 
