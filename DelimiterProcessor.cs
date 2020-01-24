@@ -28,7 +28,7 @@ namespace MainProgram
 		/// <param name="fieldNum"> The number of expected fields </param>
 		public DelimiterProcessor(StreamReader stream, char dChar, string type, int fieldNum)
 		{
-			reader = new CsvReader(stream, dChar);	
+			reader = new CsvReader(stream, dChar);
 			delimiter = dChar;
 			numOfFields = fieldNum;
 			format = type;
@@ -51,11 +51,11 @@ namespace MainProgram
 			}
 			catch (EndOfStreamException)
 			{
-				Console.WriteLine("\nERROR: Input file is empty. Exiting program.");
+				Console.WriteLine("\nERROR: Input file is empty or invalid. Exiting program.");
 				Console.ReadLine();
 				return;
 			}
-			
+
 			if (row.Length != numOfFields)
 			{
 				Console.WriteLine("\nERROR: The provided input file does not contain the expected formatting. Exiting program.");
@@ -121,7 +121,7 @@ namespace MainProgram
 						}
 						else
 						{
-							writer.WriteLine(string.Join("	", strArr));
+							writer.WriteLine(string.Join("\t", strArr));
 						}
 					}
 					// Close the StreamWriter. 
@@ -143,7 +143,7 @@ namespace MainProgram
 						}
 						else
 						{
-							writer.WriteLine(string.Join("	", strArr));
+							writer.WriteLine(string.Join("\t", strArr));
 						}
 					// Close the StreamWriter. 
 					writer.Close();

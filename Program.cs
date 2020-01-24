@@ -13,9 +13,9 @@ namespace MainProgram
 	{
 		static void Main(string[] args)
 		{
-		// ############################################################################################
-		// # INIT																					  #
-		// ############################################################################################
+			// ############################################################################################
+			// # INIT																					  #
+			// ############################################################################################
 			// Declare the variables that will be used to track the question responses and process the input. 
 			string filePath, fileType;
 			int fieldCount = -1;
@@ -28,9 +28,9 @@ namespace MainProgram
 			Console.WriteLine("==========================================================\n");
 			Console.WriteLine("Please provide answers to each of the following questions.\n");
 
-		// ############################################################################################
-		// # QUESTION ONE																			  #
-		// ############################################################################################
+			// ############################################################################################
+			// # QUESTION ONE																			  #
+			// ############################################################################################
 			// Open the file for reading. Ensure that the file path is correct. 
 			Console.WriteLine("1. What is the file path of the file that needs to be processed? If applicable, please include the file extension.");
 			do
@@ -52,11 +52,11 @@ namespace MainProgram
 				{
 					Console.WriteLine("\nPlease provide a valid file path that is fewer than 260 characters.");
 				}
-			} while (stream == null);			
-			
-		// ############################################################################################
-		// # QUESTION TWO																			  #
-		// ############################################################################################
+			} while (stream == null);
+
+			// ############################################################################################
+			// # QUESTION TWO																			  #
+			// ############################################################################################
 			Console.WriteLine("\n2. Is the file format CSV (comma-separated values) or TSV (tab-separated values)?");
 			fileType = Console.ReadLine().ToLower();
 
@@ -68,9 +68,9 @@ namespace MainProgram
 				fileType = Console.ReadLine().ToLower();
 			}
 
-		// ############################################################################################
-		// # QUESTION THREE																			  #
-		// ############################################################################################
+			// ############################################################################################
+			// # QUESTION THREE																			  #
+			// ############################################################################################
 			// The system will only allow a user to input an integer value. 	
 			while (fieldCount < 1)
 			{
@@ -88,12 +88,12 @@ namespace MainProgram
 					Console.WriteLine("\nYour number is too large. Please enter a reasonable number of fields (e.g. 5, 20, 100).");
 				}
 			}
-			
-		// ############################################################################################
-		// # FILE PROCESSING																		  #
-		// ############################################################################################
+
+			// ############################################################################################
+			// # FILE PROCESSING																		  #
+			// ############################################################################################
 			// Display the user's inputs.
-			Console.WriteLine("\nThese are the answers you provided for each question respectively:\n" 
+			Console.WriteLine("\nThese are the answers you provided for each question respectively:\n"
 									+ filePath + ", " + fileType + ", " + fieldCount);
 
 			// Begin processing on the input file. 
